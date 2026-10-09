@@ -21,7 +21,8 @@ def dirt_color(row):
 
 def on_enemy_popped(enemy, score):
     """Called when an enemy is popped; add particles, bonus points, or a colour flash here."""
-    pass
+    depth_label = "surface" if enemy.cell[0] <= 4 else ("mid" if enemy.cell[0] <= 9 else "deep")
+    print(f"[POP] Enemy popped at row {enemy.cell[0]} ({depth_label})! Score is now {score}.")
 
 
 def enemy_speed_multiplier(level):
